@@ -5,6 +5,7 @@ import {
   InvalidName,
   InvalidPassword,
   ShortPassword,
+  UserAlreadyExists,
   UserNotFound,
 } from "../error/customError";
 import { LoginInputDTO, user, UserInputDTO } from "../model/user";
@@ -41,6 +42,12 @@ export class UserBusiness {
         throw new ShortPassword();
       }
 
+      const users = await userDatabase.findUser(email);
+
+      if (users && name === users.name && email === users.email && await hashManager.compare(password, users.password)) {
+        throw new UserAlreadyExists();
+      } 
+      
       const id: string = idGenerator.generateId();
 
       const hashPassword: string = await hashManager.hash(password);
@@ -61,7 +68,7 @@ export class UserBusiness {
       throw new CustomError(400, error.message);
     }
   };
-  
+
   public login = async (input: LoginInputDTO): Promise<string> => {
     try {
       const { email, password } = input;
@@ -72,9 +79,9 @@ export class UserBusiness {
 
       if (!email.includes("@")) {
         throw new InvalidEmail();
-      }   
+      }
       const user = await userDatabase.findUser(email);
-      
+
       if (!user) {
         throw new UserNotFound();
       }
@@ -88,8 +95,7 @@ export class UserBusiness {
         throw new InvalidPassword();
       }
 
-      const token = tokenGenerator.generateToken({id:user.id});
-
+      const token = tokenGenerator.generateToken({ id: user.id });
 
       return token;
     } catch (error: any) {
@@ -97,22 +103,23 @@ export class UserBusiness {
     }
   };
 
-  public getUsers = async (token: string) => {
-    //instanciar fora do try  
+  public getUsers = async (token: string): Promise<user> =>{
     try {
-       const userDatabase = new UserDatabase()
-       
-       if (!token) {
-        throw new UserNotFound();
-       }
-      
-       console.log("estou aki"); 
-       return await userDatabase.getUsers();
-       
-    } catch (error: any) {
-       throw new Error(error.message)
-    }
- }
- 
+      if (!token) {
+        throw new CustomError(422, "O token deve ser fornecido")
+      }
 
+      const userId = tokenGenerator.tokenData(token).id
+
+      const user = await userDatabase.getUsers(userId)
+
+      if (!user) {
+        throw new UserNotFound()
+      }
+
+      return user
+    } catch (error: any) {
+      throw new CustomError(400, error.message)
+    }
+  }
 }
