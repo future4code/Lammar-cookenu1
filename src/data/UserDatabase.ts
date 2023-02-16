@@ -1,4 +1,4 @@
-import { CustomError } from "../error/customError";
+import { CustomError, UserNotFound } from "../error/customError";
 import { user } from "../model/user";
 import { BaseDatabase } from "./BaseDatabase";
 
@@ -24,4 +24,25 @@ export class UserDatabase extends BaseDatabase {
       throw new CustomError(400, error.message);
     }
   }
+
+  public getUsers = async (id: string): Promise<user> => {
+    try {
+      const user = await UserDatabase.connection("Cookenu_users")
+        .select("id", "name", "email")
+        .where({ id })        
+      if (!user) {
+        throw new UserNotFound();
+      }
+      return user[0];
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }; 
+
+
 }
+  
+ 
+  
+  
+

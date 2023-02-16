@@ -39,3 +39,9 @@ export class Unauthorized extends CustomError{
         super(401, "Usuário não autorizado")
     }
 }
+
+export class UserAlreadyExists extends CustomError{ 
+    constructor(){
+        super(401, "Este usuário já existe no banco de dados")
+    }
+}

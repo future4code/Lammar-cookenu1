@@ -4,10 +4,11 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name": "Teste Usuário",    
-   "email": "teste@teste.com" ,
+   "name": "TESTANDO 123",    
+   "email": "teste@XXX.com" ,
    "password": "teste123"
 }
+
 
 ### Login
 
@@ -15,6 +16,10 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-	"email": "teste@teste.com",
+	"email": "teste@XXX.com",
 	"password": "teste123"
 }
+
+###
+POST http://localhost:3003/user/profile 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkOThiYzIzLTc2ODUtNDQ4OC05YzI3LTI2NGVkZDZlNjRlYSIsImlhdCI6MTY3NjU4Nzk1NiwiZXhwIjoxNjc2NTkxNTU2fQ.qevSG-28Yxf6BJ_EowDyk4B1O_h0-YiU2bsU7vxKPIc
