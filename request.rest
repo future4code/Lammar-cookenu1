@@ -4,10 +4,11 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name": "Teste Usuário",    
-   "email": "teste@teste.com" ,
+   "name": "TESTANDO 123",    
+   "email": "teste@XXX.com" ,
    "password": "teste123"
 }
+
 
 ### Login
 
@@ -17,4 +18,13 @@ Content-Type: application/json
 {
 	"email": "teste@teste.com",
 	"password": "teste123"
+}
+
+###
+POST http://localhost:3003/user/profile
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjNjk5ZWUwLWE0ZWQtNDNmMS1iNDgzLTcwNjMzOTI4YzE2MSIsImlhdCI6MTY3NjUwNTQxMywiZXhwIjoxNjc2NTA5MDEzfQ.B5MHs-0foMiVYQGYJhHxpR9FOcK-kVUlgaNC1GsFsjg
+
+{
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjNjk5ZWUwLWE0ZWQtNDNmMS1iNDgzLTcwNjMzOTI4YzE2MSIsImlhdCI6MTY3NjUwNTQxMywiZXhwIjoxNjc2NTA5MDEzfQ.B5MHs-0foMiVYQGYJhHxpR9FOcK-kVUlgaNC1GsFsjg"
 }

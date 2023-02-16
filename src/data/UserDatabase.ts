@@ -24,4 +24,23 @@ export class UserDatabase extends BaseDatabase {
       throw new CustomError(400, error.message);
     }
   }
-}
+
+  public getUsers = async (): Promise<user[]> => {
+    try {
+      //inia conexão
+      UserDatabase.connection;  
+
+      const getUsers = await UserDatabase.connection
+        .select("id", "name", "email")
+        .from("Cookenu_users");
+
+      return getUsers;
+    } catch (error: any) {
+      throw new Error(error.message);
+    } 
+  };
+
+ 
+  }
+  
+

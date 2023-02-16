@@ -97,4 +97,22 @@ export class UserBusiness {
     }
   };
 
+  public getUsers = async (token: string) => {
+    //instanciar fora do try  
+    try {
+       const userDatabase = new UserDatabase()
+       
+       if (!token) {
+        throw new UserNotFound();
+       }
+      
+       console.log("estou aki"); 
+       return await userDatabase.getUsers();
+       
+    } catch (error: any) {
+       throw new Error(error.message)
+    }
+ }
+ 
+
 }
