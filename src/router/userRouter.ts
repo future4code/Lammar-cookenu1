@@ -8,6 +8,7 @@ const userController = new UserController();
 
 userRouter.post("/signup", userController.signup);
 userRouter.post("/login", userController.login);
-userRouter.post("/PROFILE", userController.getUsers);
+userRouter.get("/profile", userController.getUsers);
+userRouter.get("/:id", userController.getUserById);
 
-// userRouter.put("/edit/:id", userController.editUser);
+

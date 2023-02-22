@@ -20,6 +20,28 @@ Content-Type: application/json
 	"password": "teste123"
 }
 
+
 ###
-POST http://localhost:3003/user/profile 
+GET http://localhost:3003/user/profile 
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkOThiYzIzLTc2ODUtNDQ4OC05YzI3LTI2NGVkZDZlNjRlYSIsImlhdCI6MTY3NjU4Nzk1NiwiZXhwIjoxNjc2NTkxNTU2fQ.qevSG-28Yxf6BJ_EowDyk4B1O_h0-YiU2bsU7vxKPIc
+
+
+###
+GET http://localhost:3003/user/7d98bc23-7685-4488-9c27-264edd6e64ea
+
+
+
+
+###
+POST http://localhost:3003/recipe/create
+Content-Type: application/json
+
+{
+   "createAt": "2023-02-22",
+   "description": "Estrogonofe é um prato originário da culinária russa composto de cubos de carne.",
+   "title": "Estrogonofe"   
+}
+
+
+###
+GET http://localhost:3003/recipe/d5244c31-54c6-4c7e-a134-623327d6fdc5

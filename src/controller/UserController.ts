@@ -31,7 +31,7 @@ export class UserController {
         email,
         password,
       };
-      
+
       const userBusiness = new UserBusiness();
       const token = await userBusiness.login(input);
 
@@ -41,16 +41,27 @@ export class UserController {
     }
   };
 
-    public getUsers = async (req: Request, res: Response) => {
-      try {
-        const token = req.headers.authorization as string;        
-        const userBusiness = new UserBusiness()
-        const users = await userBusiness.getUsers(token)
+  public getUsers = async (req: Request, res: Response) => {
+    try {
+      const token = req.headers.authorization as string;
+      const userBusiness = new UserBusiness();
+      const users = await userBusiness.getUsers(token);
 
-        res.status(201).send(users)
-      } catch (error: any) {
-        res.status(400).send(error.message)
-      }
-  }
+      res.status(201).send(users);
+    } catch (error: any) {
+      res.status(400).send(error.message);
+    }
+  };
 
+  public getUserById = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const userBusiness = new UserBusiness();
+      const user = await userBusiness.getUserById(id);
+
+      res.status(200).send(user);
+    } catch (error: any) {
+      res.status(400).send(error.message);
+    }
+  };
 }
