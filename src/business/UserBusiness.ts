@@ -122,4 +122,18 @@ export class UserBusiness {
       throw new CustomError(400, error.message)
     }
   }
+
+  public getUserById = async (id: string): Promise<user> => {
+    try {
+      const user = await userDatabase.getUsers(id);
+  
+      if (!user) {
+        throw new UserNotFound();      }
+  
+      return user;
+    } catch (error: any) {
+      throw new CustomError(400, error.message);
+    }
+  }
+
 }

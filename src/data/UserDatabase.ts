@@ -39,6 +39,19 @@ export class UserDatabase extends BaseDatabase {
     }
   }; 
 
+  public getUsersById = async (id: string): Promise<user> => {
+    try {
+      const user = await UserDatabase.connection("Cookenu_users")
+        .select("id", "name", "email")
+        .where({ id })        
+      if (!user) {
+        throw new UserNotFound();
+      }
+      return user[0];
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  };
 
 }
   

@@ -45,3 +45,23 @@ export class UserAlreadyExists extends CustomError{
         super(401, "Este usuário já existe no banco de dados")
     }
 }
+
+
+export class RecipeNotFound extends CustomError{ 
+    constructor(){
+        super(404, "Receita não encontrada")
+    }
+}
+
+export class RecipeAlreadyExists extends CustomError{ 
+    constructor(){
+        super(401, "Esta receita já existe no banco de dados")
+    }
+}
+
+
+export class ShortDescription extends CustomError{ 
+    constructor(){
+        super(400, "Descrição curta! A descrição precisa ter 10 ou mais caracteres")
+    }
+}
