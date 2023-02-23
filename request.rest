@@ -2,7 +2,7 @@
 
 ### Create User
 
-POST http://localhost:3003/user/signup
+POST https://lamarr-cookenu1.onrender.com/user/signup
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ### Login
 
-POST http://localhost:3003/user/login
+POST https://lamarr-cookenu1.onrender.com/user/login
 Content-Type: application/json
 
 {
@@ -24,19 +24,18 @@ Content-Type: application/json
 
 
 ### GET Logged User
-GET http://localhost:3003/user/profile 
+GET https://lamarr-cookenu1.onrender.com/user/profile 
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlNTZkMTEwLWNhZDEtNDk3OC1hYWJkLTg1NDQ0M2JhNWYyZCIsImlhdCI6MTY3NzE5MDM1MCwiZXhwIjoxNjc3MTkzOTUwfQ._0DtUcfQVAFQVk8CPaaCGXzOmufP7DzKNn5WAXFXzTQ
 
 
 ### GET user by ID
-GET http://localhost:3003/user/7d98bc23-7685-4488-9c27-264edd6e64ea
-
+GET https://lamarr-cookenu1.onrender.com/user/7d98bc23-7685-4488-9c27-264edd6e64ea
 
 
 # Endpoints Recipes
 
 ### Create Recipe
-POST http://localhost:3003/recipe/create
+POST https://lamarr-cookenu1.onrender.com/recipe/create
 Content-Type: application/json
 
 {
@@ -47,4 +46,4 @@ Content-Type: application/json
 
 
 ### Get Recipe by ID
-GET http://localhost:3003/recipe/598aa9d0-8e33-4bb2-9bb4-5f5986097469
+GET  https://lamarr-cookenu1.onrender.com/recipe/598aa9d0-8e33-4bb2-9bb4-5f5986097469
