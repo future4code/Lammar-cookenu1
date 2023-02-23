@@ -1,12 +1,14 @@
+# Enpoints User
+
 ### Create User
 
 POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name": "TESTANDO 123",    
-   "email": "teste@XXX.com" ,
-   "password": "teste123"
+   "name": "ONERO SUPREMO",    
+   "email": "oneradinho@gmail.com" ,
+   "password": "seriaOneroDaMinhaParte?"
 }
 
 
@@ -16,32 +18,33 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-	"email": "teste@XXX.com",
-	"password": "teste123"
+	"email": "oneradinho@gmail.com",
+	"password": "seriaOneroDaMinhaParte?"
 }
 
 
-###
+### GET Logged User
 GET http://localhost:3003/user/profile 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkOThiYzIzLTc2ODUtNDQ4OC05YzI3LTI2NGVkZDZlNjRlYSIsImlhdCI6MTY3NjU4Nzk1NiwiZXhwIjoxNjc2NTkxNTU2fQ.qevSG-28Yxf6BJ_EowDyk4B1O_h0-YiU2bsU7vxKPIc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlNTZkMTEwLWNhZDEtNDk3OC1hYWJkLTg1NDQ0M2JhNWYyZCIsImlhdCI6MTY3NzE5MDM1MCwiZXhwIjoxNjc3MTkzOTUwfQ._0DtUcfQVAFQVk8CPaaCGXzOmufP7DzKNn5WAXFXzTQ
 
 
-###
+### GET user by ID
 GET http://localhost:3003/user/7d98bc23-7685-4488-9c27-264edd6e64ea
 
 
 
+# Endpoints Recipes
 
-###
+### Create Recipe
 POST http://localhost:3003/recipe/create
 Content-Type: application/json
 
 {
-   "createAt": "2023-02-22",
-   "description": "Estrogonofe é um prato originário da culinária russa composto de cubos de carne.",
-   "title": "Estrogonofe"   
+   "createAt": "2023-02-23",
+   "description": "HUUUMMM Bolo de Murango.",
+   "title": "Bolo de Murango do Pica Pau"   
 }
 
 
-###
-GET http://localhost:3003/recipe/d5244c31-54c6-4c7e-a134-623327d6fdc5
+### Get Recipe by ID
+GET http://localhost:3003/recipe/598aa9d0-8e33-4bb2-9bb4-5f5986097469

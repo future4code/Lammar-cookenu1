@@ -46,6 +46,13 @@ export class UserAlreadyExists extends CustomError{
     }
 }
 
+// -------------- Erros recipe ------------------//
+
+export class InvalidRecipe extends CustomError{ 
+    constructor(){
+        super(400, "Receita inválido")
+    }
+}
 
 export class RecipeNotFound extends CustomError{ 
     constructor(){

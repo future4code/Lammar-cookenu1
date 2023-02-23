@@ -1,7 +1,7 @@
 import { RecipeDatabase } from "../data/RecipeDatabase";
 import {
   CustomError,
-  InvalidName,
+  InvalidRecipe,
   RecipeAlreadyExists,
   RecipeNotFound,
   ShortDescription,
@@ -29,7 +29,7 @@ export class RecipeBusiness {
       }
 
       if (title.length < 2) {
-        throw new InvalidName();
+        throw new InvalidRecipe();
       }
 
       if (description.length <= 10) {
