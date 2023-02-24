@@ -1,15 +1,17 @@
 ## Cookenu 🍲
 
-## Links:
-### ➡️ [Documentação](https://documenter.getpostman.com/view/22376287/2s93CNMssC)
-### ➡️ [Deploy](https://lamarr-cookenu1.onrender.com)
-
 Cookenu é uma rede social, na qual os usuários podem dividir informações relevantes sobre comidas e receitas que tenham experimentado.  <br/>
 O projeto consite em fixação de aprendizado acerca do assunto de backend, englobando os seguintes tópicos: <br/>
 ◻️ Arquitetura de Software por camadas (Controller, Business e Data); <br/>
 ◻️ Criptografia;  <br/>
 ◻️ Autorização;  <br/>
 ◻️ Tipagem e utilização de TypeScript <br/>
+
+## Links:
+### ➡️ [Documentação](https://documenter.getpostman.com/view/22376287/2s93CNMssC)
+### ➡️ [Deploy](https://lamarr-cookenu1.onrender.com)
+
+
 
 ## Endpoints criados no projeto: 
 <br/>
