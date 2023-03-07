@@ -1,0 +1,49 @@
+# Enpoints User
+
+### Create User
+
+POST https://lamarr-cookenu1.onrender.com/user/signup
+Content-Type: application/json
+
+{
+   "name": "ONERO SUPREMO",    
+   "email": "oneradinho@gmail.com" ,
+   "password": "seriaOneroDaMinhaParte?"
+}
+
+
+### Login
+
+POST https://lamarr-cookenu1.onrender.com/user/login
+Content-Type: application/json
+
+{
+	"email": "oneradinho@gmail.com",
+	"password": "seriaOneroDaMinhaParte?"
+}
+
+
+### GET Logged User
+GET https://lamarr-cookenu1.onrender.com/user/profile 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlNTZkMTEwLWNhZDEtNDk3OC1hYWJkLTg1NDQ0M2JhNWYyZCIsImlhdCI6MTY3NzE5MDM1MCwiZXhwIjoxNjc3MTkzOTUwfQ._0DtUcfQVAFQVk8CPaaCGXzOmufP7DzKNn5WAXFXzTQ
+
+
+### GET user by ID
+GET https://lamarr-cookenu1.onrender.com/user/7d98bc23-7685-4488-9c27-264edd6e64ea
+
+
+# Endpoints Recipes
+
+### Create Recipe
+POST https://lamarr-cookenu1.onrender.com/recipe/create
+Content-Type: application/json
+
+{
+   "createAt": "2023-02-23",
+   "description": "HUUUMMM Bolo de Murango.",
+   "title": "Bolo de Murango do Pica Pau"   
+}
+
+
+### Get Recipe by ID
+GET  https://lamarr-cookenu1.onrender.com/recipe/598aa9d0-8e33-4bb2-9bb4-5f5986097469
